@@ -13,7 +13,13 @@ unistd.h
 -
 stdlib.h
 -
-stdio.h
+vector
+-
+string
+-
+cstring
+-
+sys/wait.h
 -
 iostream
 -

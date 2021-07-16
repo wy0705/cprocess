@@ -2,73 +2,138 @@
 #include <iostream>
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
-using namespace std;
-int split(char* s){
-    int n=0,t=0;
-    char *argv[]={"","", NULL};
-    char *m=(char*)malloc(sizeof(char)*7);
-    for(int i=0;i<sizeof(s);i++){
-        cout<<s[i]<<endl;
-        if (s[i]==' '){
-            n=0;
-            cout<<m<<endl;
-            argv[t]=m;
-            t++;
-        }
-        m[n]=s[i];
-        n++;
-    }
-    //cout<<argv[0]<<endl;
-    cout<<argv[1]<<endl;
-    for (int i = 0; i < 2; ++i) {
-        cout<<argv[i]<<endl;
-    }
-}
-int execve1(char* s)
-{
-    char *argv[]={s, NULL};
+//#include <stdio.h>
+#include <vector>
+#include<string>
+#include <cstring>
+#include <sys/wait.h>
 
+
+using namespace std;
+
+int execve1(vector<string> lines)
+{
+    /*const char *argv[lines.size()+1];
+    for (int i = 0; i < lines.size(); ++i) {
+        argv[i]=lines[i].c_str();
+    }
+    argv[lines.size()]="NULL";
+
+    char *argv1[lines.size()+1];
+    for (int i = 0; i < lines.size()+1; ++i) {
+        //argv1[i]=argv[i];
+        cout<<argv[i]<<endl;
+        char* pc =new char[sizeof(argv[i])];
+        strcpy(pc,argv1[i]);
+        argv1[i]=pc;
+    }*/
+    char *argv[lines.size()+1];
+    char* c;
+    for (int i = 0; i < lines.size(); ++i) {
+        const int len=lines[i].length();
+        c=new char[len+1];
+        strcpy(c,lines[i].c_str());
+        argv[i]=c;
+    }
+    argv[lines.size()]=NULL;
+
+
+    const char *path="/bin/ls";
+    if (lines[0]=="ls")
+        path="/bin/ls";
+    else if (lines[0]=="pwd")
+        path="/bin/pwd";
+
+    cout<<path<<endl;
     char *envp[]={0,NULL}; //传递给执行文件新的环境变量数组
 
-    execve("/bin/ls",argv,envp);
+    execve(path,argv,envp);
     exit(0);
 
 }
+
+
+vector<string> split(string str,string pattern) {
+    string::size_type pos;
+    vector<string> result;
+    str+=pattern;  //扩展字符串以方便操作
+    int size=str.size();
+    for(int i=0;i<size;i++) {
+        pos=str.find(pattern,i);
+        if(pos<size) {
+            string s=str.substr(i,pos-i);
+            result.push_back(s);
+            i=pos+pattern.size()-1;
+        }
+    }
+    return result;
+}
+
+
 int fork1(){
     bool isre=true;
     pid_t pid, pr;
-    pid=fork();
     char *s=(char*)malloc(sizeof(char)*20);
+    while (isre) {
+    pid=fork();
+
     if(pid<0) /* 如果fork出错 */
         printf("Error occured on forking.\n");
     else if(pid==0){ /* 如果是子进程 */
-        while (isre) {
-            cout << "? ";
-            cin >> s;
 
-            if (s[0] == 'e' && s[1] == 'x' && s[2] == 'i' && s[3] == 't') {
-                isre= false;
-                break;
+            cout<<"? ";
+            string s;
+            getline(cin,s);
+            cout<<s<<endl;
+            if (s=="exit"){
+                cout<<"结束退出！"<<endl;
+                isre=false;
+                return 1;
             }
-            execve1(s);
+            vector<string> lines;
+            lines = split(s," ");
+            execve1(lines);
 
-        }
 
     }else if(pid>0){
-        while (isre){
-        }
+        //while (isre){}
+        pid_t pr=wait(NULL);
+        printf("aaaaa %d\n",pr);
 
+    }
     }
     return 0;
 }
 
 
+//string[] 转char*[]
+/*string s;
+getline(cin,s);
+cout<<1<<endl;
+cout<<s<<endl;
+vector<string> lines;
+lines = split(s," ");
+for (int i = 0; i < lines.size(); ++i) {
+cout<<lines[i]<<endl;
+}
+const char *argv[lines.size()+1];
+for (int i = 0; i < lines.size(); ++i) {
+argv[i]=lines[i].c_str();
+}
+argv[lines.size()]="NULL";
+for (int i = 0; i < lines.size()+1; ++i) {
+cout<<argv[i]<<endl;
+}*/
+
 int main() {
     fork1();
+    /*char *argv[]={"pwd", NULL};
+
+    char *envp[]={0,NULL}; //传递给执行文件新的环境变量数组
+
+    execve("/bin/pwd",argv,envp);*/
     return 0;
 }
-
 
 /*#include<unistd.h>
 #include <iostream>
@@ -86,3 +151,4 @@ int main(int arg, char **args)
     execve("/bin/ls",argv,envp);
 
 }*/
+
