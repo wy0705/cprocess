@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/untitled5.dir/main.cpp.o"
+  "CMakeFiles/untitled5.dir/poimx.cpp.o"
   "untitled5"
   "untitled5.pdb"
 )

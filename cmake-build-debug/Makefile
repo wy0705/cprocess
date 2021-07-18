@@ -170,6 +170,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+poimx.o: poimx.cpp.o
+
+.PHONY : poimx.o
+
+# target to build an object file
+poimx.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/poimx.cpp.o
+.PHONY : poimx.cpp.o
+
+poimx.i: poimx.cpp.i
+
+.PHONY : poimx.i
+
+# target to preprocess a source file
+poimx.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/poimx.cpp.i
+.PHONY : poimx.cpp.i
+
+poimx.s: poimx.cpp.s
+
+.PHONY : poimx.s
+
+# target to generate assembly for a file
+poimx.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/poimx.cpp.s
+.PHONY : poimx.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -182,6 +209,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... poimx.o"
+	@echo "... poimx.i"
+	@echo "... poimx.s"
 .PHONY : help
 
 
