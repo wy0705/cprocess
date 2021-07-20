@@ -3,3 +3,7 @@
 
 CMakeFiles/untitled5.dir/main.cpp.o: ../main.cpp
 
+CMakeFiles/untitled5.dir/poimx.cpp.o: ../poimx.cpp
+
+CMakeFiles/untitled5.dir/wrlock.cpp.o: ../wrlock.cpp
+

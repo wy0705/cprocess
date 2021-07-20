@@ -197,6 +197,33 @@ poimx.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/poimx.cpp.s
 .PHONY : poimx.cpp.s
 
+wrlock.o: wrlock.cpp.o
+
+.PHONY : wrlock.o
+
+# target to build an object file
+wrlock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/wrlock.cpp.o
+.PHONY : wrlock.cpp.o
+
+wrlock.i: wrlock.cpp.i
+
+.PHONY : wrlock.i
+
+# target to preprocess a source file
+wrlock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/wrlock.cpp.i
+.PHONY : wrlock.cpp.i
+
+wrlock.s: wrlock.cpp.s
+
+.PHONY : wrlock.s
+
+# target to generate assembly for a file
+wrlock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/wrlock.cpp.s
+.PHONY : wrlock.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +239,9 @@ help:
 	@echo "... poimx.o"
 	@echo "... poimx.i"
 	@echo "... poimx.s"
+	@echo "... wrlock.o"
+	@echo "... wrlock.i"
+	@echo "... wrlock.s"
 .PHONY : help
 
 

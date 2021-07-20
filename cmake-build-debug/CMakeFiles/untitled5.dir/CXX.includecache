@@ -21,6 +21,14 @@ cstring
 -
 sys/wait.h
 -
+stdio.h
+-
+signal.h
+-
+sys/types.h
+-
+unistd.h
+-
 iostream
 -
 

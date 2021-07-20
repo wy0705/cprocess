@@ -125,15 +125,48 @@ for (int i = 0; i < lines.size()+1; ++i) {
 cout<<argv[i]<<endl;
 }*/
 
-int main() {
-    fork1();
-    /*char *argv[]={"pwd", NULL};
+//int main() {
+//    fork1();
+//    /*char *argv[]={"pwd", NULL};
+//
+//    char *envp[]={0,NULL}; //传递给执行文件新的环境变量数组
+//
+//    execve("/bin/pwd",argv,envp);*/
+//    return 0;
+//}
 
-    char *envp[]={0,NULL}; //传递给执行文件新的环境变量数组
 
-    execve("/bin/pwd",argv,envp);*/
+//
+// Created by andilyliao on 17-8-10.
+//
+#include<stdio.h>
+#include<signal.h>
+#include<sys/types.h>
+#include<unistd.h>
+
+void SigHandler(int iSignNum)
+{
+    printf("signal:%d\n",iSignNum);
+}
+
+int main()
+{
+    signal(SIGALRM,SigHandler);
+    alarm(1);
+    printf("before pause \n");
+    /*
+     * 当程序运行时，pause会使当前的进程挂起（进入睡眠状态），
+     * 直到我们向该进程发送SIGINT中断信号，进程才会被唤醒，
+     * 并处理信号，处理完信号后pause函数才返回，并继续运行该程序。
+
+      任何信号都可使pause唤醒。
+     */
+    pause();//非可屏蔽中断
+    printf("after pause \n");
     return 0;
 }
+
+
 
 /*#include<unistd.h>
 #include <iostream>

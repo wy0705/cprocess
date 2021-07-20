@@ -3,4 +3,4 @@ project(untitled5)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled5 main.cpp poimx.cpp)
+add_executable(untitled5 main.cpp poimx.cpp wrlock.cpp)
