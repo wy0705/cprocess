@@ -143,6 +143,33 @@ untitled5/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/build
 .PHONY : untitled5/fast
 
+hashmap.o: hashmap.cpp.o
+
+.PHONY : hashmap.o
+
+# target to build an object file
+hashmap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/hashmap.cpp.o
+.PHONY : hashmap.cpp.o
+
+hashmap.i: hashmap.cpp.i
+
+.PHONY : hashmap.i
+
+# target to preprocess a source file
+hashmap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/hashmap.cpp.i
+.PHONY : hashmap.cpp.i
+
+hashmap.s: hashmap.cpp.s
+
+.PHONY : hashmap.s
+
+# target to generate assembly for a file
+hashmap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/hashmap.cpp.s
+.PHONY : hashmap.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -233,6 +260,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... untitled5"
+	@echo "... hashmap.o"
+	@echo "... hashmap.i"
+	@echo "... hashmap.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
