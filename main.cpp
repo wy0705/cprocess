@@ -113,7 +113,6 @@ using namespace std;
 #include <stdio.h>
 
 
-
 struct User;
 void display(User* user);
 struct User{
@@ -125,11 +124,73 @@ void display(User* user){
     printf("User id:%d\n",user->id);
     printf("User name:%s\n",user->name);
 }
+
+struct Stu;
+struct Tea;
+//typedef void (*Method)(Stu* stu);
+void tosay(Stu* stu);
+struct Stu{
+    int id;
+    char* name;
+    int age;
+    //void (*say)(Stu*)=tosay;
+};
+struct Tea{
+    int id;
+    char* name;
+    int age;
+};
+void tosayStu(Stu* stu){
+    printf("Student id:%d\n",stu->id);
+    printf("Student name:%s\n",stu->name);
+    printf("Student age:%d\n",stu->age);
+
+}
+void tosayTea(Stu* stu){
+    printf("Teacher id:%d\n",stu->id);
+    printf("Teacher name:%s\n",stu->name);
+    printf("Teacher age:%d\n",stu->age);
+
+}
+struct Method;
+struct Method{
+    void (*say)(Stu*)=tosayStu;
+};
+
+
+struct Toclass;
+Stu* toStu(string s);
+//Method* getFun(string s);
+struct Toclass{
+    //少继承obj
+    Stu* (*forname)(string s)=toStu;
+    Method* (*getFun)(string s)=getFun;
+};
+Stu* toStu(string s){
+    printf("生成一个%s对象",&s);//少一个map(补)
+    Stu* stu=(Stu*)malloc(sizeof(Stu));
+}
+/*Method* getFun(string s){
+    printf("生成一个%s方法",&s);
+    Method m=tosay;
+}*/
 int main(){
-    User user;
+    /*User user;
     user.id=1;
     user.name="wangying";
-    user.dp(&user);
+    user.dp(&user);*/
+
+    Toclass toclass;
+    Stu* stu=toclass.forname("Stu");
+    Method* m=toclass.getFun("tosayStu");
+    stu->age=12;
+    stu->name="wangying";
+    stu->id=1;
+    m->say(stu);
+
+
+
+
     return 0;
 }
 
