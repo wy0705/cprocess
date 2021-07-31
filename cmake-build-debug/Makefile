@@ -143,6 +143,33 @@ untitled5/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/build
 .PHONY : untitled5/fast
 
+McsLock.o: McsLock.cpp.o
+
+.PHONY : McsLock.o
+
+# target to build an object file
+McsLock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/McsLock.cpp.o
+.PHONY : McsLock.cpp.o
+
+McsLock.i: McsLock.cpp.i
+
+.PHONY : McsLock.i
+
+# target to preprocess a source file
+McsLock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/McsLock.cpp.i
+.PHONY : McsLock.cpp.i
+
+McsLock.s: McsLock.cpp.s
+
+.PHONY : McsLock.s
+
+# target to generate assembly for a file
+McsLock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/McsLock.cpp.s
+.PHONY : McsLock.cpp.s
+
 hashmap.o: hashmap.cpp.o
 
 .PHONY : hashmap.o
@@ -287,6 +314,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... untitled5"
+	@echo "... McsLock.o"
+	@echo "... McsLock.i"
+	@echo "... McsLock.s"
 	@echo "... hashmap.o"
 	@echo "... hashmap.i"
 	@echo "... hashmap.s"

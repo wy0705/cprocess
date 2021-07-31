@@ -84,7 +84,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/wy/CLionProjects/untitled5/McsLock.cpp">
+			<Option target="untitled5"/>
+		</Unit>
 		<Unit filename="/home/wy/CLionProjects/untitled5/McsLock.h">
+			<Option target="untitled5"/>
+		</Unit>
+		<Unit filename="/home/wy/CLionProjects/untitled5/MyMcsLock.h">
+			<Option target="untitled5"/>
+		</Unit>
+		<Unit filename="/home/wy/CLionProjects/untitled5/Myshall.h">
 			<Option target="untitled5"/>
 		</Unit>
 		<Unit filename="/home/wy/CLionProjects/untitled5/hashmap.cpp">
@@ -97,6 +106,9 @@
 			<Option target="untitled5"/>
 		</Unit>
 		<Unit filename="/home/wy/CLionProjects/untitled5/poimx.cpp">
+			<Option target="untitled5"/>
+		</Unit>
+		<Unit filename="/home/wy/CLionProjects/untitled5/ref.h">
 			<Option target="untitled5"/>
 		</Unit>
 		<Unit filename="/home/wy/CLionProjects/untitled5/wrlock.cpp">

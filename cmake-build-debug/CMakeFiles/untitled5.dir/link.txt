@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/untitled5.dir/main.cpp.o CMakeFiles/untitled5.dir/poimx.cpp.o CMakeFiles/untitled5.dir/wrlock.cpp.o CMakeFiles/untitled5.dir/hashmap.cpp.o CMakeFiles/untitled5.dir/map.cpp.o  -o untitled5 
+/usr/bin/c++  -g   CMakeFiles/untitled5.dir/main.cpp.o CMakeFiles/untitled5.dir/poimx.cpp.o CMakeFiles/untitled5.dir/wrlock.cpp.o CMakeFiles/untitled5.dir/hashmap.cpp.o CMakeFiles/untitled5.dir/map.cpp.o CMakeFiles/untitled5.dir/McsLock.cpp.o  -o untitled5  -lpthread 

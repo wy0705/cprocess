@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/wy/CLionProjects/untitled5/MyMcsLock.h
+pthread.h
+-
+stdio.h
+-
+iostream
+-
+atomic
+-
+unistd.h
+-
+
 /home/wy/CLionProjects/untitled5/main.cpp
 iostream
 -
@@ -21,6 +33,10 @@ cstring
 -
 sys/wait.h
 -
+pthread.h
+/home/wy/CLionProjects/untitled5/pthread.h
 stdio.h
 -
+MyMcsLock.h
+/home/wy/CLionProjects/untitled5/MyMcsLock.h
 

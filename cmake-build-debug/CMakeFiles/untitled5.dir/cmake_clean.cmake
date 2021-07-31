@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/untitled5.dir/McsLock.cpp.o"
   "CMakeFiles/untitled5.dir/hashmap.cpp.o"
   "CMakeFiles/untitled5.dir/main.cpp.o"
   "CMakeFiles/untitled5.dir/map.cpp.o"

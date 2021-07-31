@@ -47,14 +47,15 @@ public:
 McsThreadQueue* head;
 McsThreadQueue* tail;
 
+
 void theMcsThreadQueueLock() {
-    if(__sync_bool_compare_and_swap(&head->state,0,1)) {
+    if(__sync_bool_compare_and_swap(&head->state,0,1)) {  // 没阻塞线程 有阻塞线程进来
         head->setTid(getpid());
         head->setMcs(new McsThreadQueue());
         tail = head->getMcs();
         tail->setState(1);
 //        std::cout << "lock success\t";
-    } else {
+    } else {//有阻塞线程 向后插入
         McsThreadQueue *mtqself = tail;
         tail = tail->getMcs();
         tail = new McsThreadQueue();
