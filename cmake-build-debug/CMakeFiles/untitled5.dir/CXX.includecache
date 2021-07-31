@@ -17,6 +17,8 @@ atomic
 -
 unistd.h
 -
+pthread.h
+/home/wy/CLionProjects/untitled5/pthread.h
 
 /home/wy/CLionProjects/untitled5/main.cpp
 iostream
@@ -39,4 +41,10 @@ stdio.h
 -
 MyMcsLock.h
 /home/wy/CLionProjects/untitled5/MyMcsLock.h
+stdio.h
+-
+pthread.h
+-
+unistd.h
+-
 

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <atomic>
 #include <unistd.h>
+#include "pthread.h"
 
 
 class McsThreadBlock {
@@ -17,9 +18,8 @@ private:
     pthread_t tid;
 public:
     int state;
-    McsThreadBlock() {
+    McsThreadBlock():state(0) {
         next = nullptr;
-        state = 0;
     }
 
     void setTid(pthread_t tid) {
@@ -51,7 +51,7 @@ McsThreadBlock* head;
 McsThreadBlock* tail;
 
 //自旋
-void spin(){
+void* spin(void *p){
     while (true){
         if (head->state==0) {
             pthread_join(head->getTid(), NULL);
@@ -62,32 +62,41 @@ void spin(){
     head=head->getMcs();
 }
 
-void McsLock(pthread_t pthread){
+void McsLock(){
+
     if (__sync_bool_compare_and_swap(&head->state,0,1)) {//头为空
+        //std::cout<<"aaa"<<std::endl;
         //初始化
         if (head == tail) {
             std::cout<<"初始化成功！"<<std::endl;
-            head->setTid(pthread);
+            head->setTid(getpid());
             head->setMcs(new McsThreadBlock);
             head->setNextState(1);
             tail = head->getMcs();
         } else
-            std::cout<<"初始化不成功！"<<std::endl;
+            std::cout<<"！"<<std::endl;
 
     } else{//头不为空
         //尾插
+
         if (tail->state==1){
-            tail->setTid(pthread);
+            std::cout<<"有一个线程进入mcs队列"<<std::endl;
+            tail->setTid(getpid());
             tail->setMcs(new McsThreadBlock);
             tail->setNextState(1);
             tail=tail->getMcs();
         } else
             std::cout<<"最后一个在执行状态！"<<std::endl;
     }
-    spin();
+    pthread_t t;
+    pthread_create(&t, NULL, spin, NULL);
+    pthread_detach(t);
+    pthread_join(t,NULL);
+    //spin();
 }
 
 void McsUnLock(){
+
     if (__sync_bool_compare_and_swap(&head->state,1,0)){
         //pthread_t* pthread=head->getTid();
         //pthread_join(head->getTid(), NULL);
