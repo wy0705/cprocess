@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/wy/CLionProjects/untitled5/main.cpp" "/home/wy/CLionProjects/untitled5/cmake-build-debug/CMakeFiles/untitled5.dir/main.cpp.o"
   "/home/wy/CLionProjects/untitled5/map.cpp" "/home/wy/CLionProjects/untitled5/cmake-build-debug/CMakeFiles/untitled5.dir/map.cpp.o"
   "/home/wy/CLionProjects/untitled5/poimx.cpp" "/home/wy/CLionProjects/untitled5/cmake-build-debug/CMakeFiles/untitled5.dir/poimx.cpp.o"
+  "/home/wy/CLionProjects/untitled5/proc.cpp" "/home/wy/CLionProjects/untitled5/cmake-build-debug/CMakeFiles/untitled5.dir/proc.cpp.o"
   "/home/wy/CLionProjects/untitled5/wrlock.cpp" "/home/wy/CLionProjects/untitled5/cmake-build-debug/CMakeFiles/untitled5.dir/wrlock.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

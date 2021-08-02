@@ -278,6 +278,33 @@ poimx.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/poimx.cpp.s
 .PHONY : poimx.cpp.s
 
+proc.o: proc.cpp.o
+
+.PHONY : proc.o
+
+# target to build an object file
+proc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/proc.cpp.o
+.PHONY : proc.cpp.o
+
+proc.i: proc.cpp.i
+
+.PHONY : proc.i
+
+# target to preprocess a source file
+proc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/proc.cpp.i
+.PHONY : proc.cpp.i
+
+proc.s: proc.cpp.s
+
+.PHONY : proc.s
+
+# target to generate assembly for a file
+proc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled5.dir/build.make CMakeFiles/untitled5.dir/proc.cpp.s
+.PHONY : proc.cpp.s
+
 wrlock.o: wrlock.cpp.o
 
 .PHONY : wrlock.o
@@ -329,6 +356,9 @@ help:
 	@echo "... poimx.o"
 	@echo "... poimx.i"
 	@echo "... poimx.s"
+	@echo "... proc.o"
+	@echo "... proc.i"
+	@echo "... proc.s"
 	@echo "... wrlock.o"
 	@echo "... wrlock.i"
 	@echo "... wrlock.s"
